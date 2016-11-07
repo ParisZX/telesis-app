@@ -1,0 +1,23 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @user.name
+p
+  strong Email:
+  = @user.email
+
+table
+  th Clients
+  tbody
+    tr
+      td id
+      td Name
+    - @clients.each do |client|
+      tr
+        td = client.id
+        td = client.name
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path
